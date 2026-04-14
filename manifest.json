@@ -1,0 +1,26 @@
+{
+  "name": "Théra - Ton coach intérieur",
+  "short_name": "Théra",
+  "description": "L'IA qui t'aide à te comprendre et t'accompagne jour après jour.",
+  "start_url": "https://thera-production-6f4b.up.railway.app/welcome",
+  "scope": "https://thera-app.com/",
+  "display": "standalone",
+  "background_color": "#1a1209",
+  "theme_color": "#1a1209",
+  "orientation": "portrait",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["lifestyle", "health", "wellness"]
+}
