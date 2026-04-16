@@ -704,17 +704,26 @@
   <script>
     let isAnnual = false;
 
+    function updateAppLinks() {
+      const isEn = document.body.classList.contains('lang-en');
+      document.querySelectorAll('a[href*="app.thera-app.com/welcome"]').forEach(a => {
+        a.href = 'https://app.thera-app.com/welcome' + (isEn ? '?lang=en' : '');
+      });
+    }
+
     function toggleLang() {
       document.body.classList.toggle('lang-en');
       const isEn = document.body.classList.contains('lang-en');
       document.documentElement.lang = isEn ? 'en' : 'fr';
       localStorage.setItem('thera_lang', isEn ? 'en' : 'fr');
+      updateAppLinks();
     }
 
     if (localStorage.getItem('thera_lang') === 'en') {
       document.body.classList.add('lang-en');
       document.documentElement.lang = 'en';
     }
+    updateAppLinks();
 
     function toggleBilling() {
       isAnnual = !isAnnual;
