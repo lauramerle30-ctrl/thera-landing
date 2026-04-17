@@ -719,10 +719,20 @@
       updateAppLinks();
     }
 
-    if (localStorage.getItem('thera_lang') === 'en') {
-      document.body.classList.add('lang-en');
-      document.documentElement.lang = 'en';
-    }
+    // English by default, French for French-speaking browsers or saved preference
+    (function initLang() {
+      var saved = localStorage.getItem('thera_lang');
+      var browserLang = navigator.language || '';
+      var shouldBeFrench = saved === 'fr' || (!saved && browserLang.startsWith('fr'));
+      if (!shouldBeFrench) {
+        document.body.classList.add('lang-en');
+        document.documentElement.lang = 'en';
+      } else {
+        document.body.classList.remove('lang-en');
+        document.documentElement.lang = 'fr';
+      }
+      localStorage.setItem('thera_lang', shouldBeFrench ? 'fr' : 'en');
+    })();
     updateAppLinks();
 
     function toggleBilling() {
