@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -671,7 +671,7 @@
         </div>
       </div>
       <p class="annual-note" id="annual-note" style="display:none;">
-        <span data-lang="fr">79,99€ facturés en une fois · soit 6,67€/mois</span><span data-lang="en">€79.99 billed once · that's €6.67/month</span>
+        <span data-lang="fr">79,99€ facturés en une fois · soit 6,67€/mois</span><span data-lang="en">$79.99 billed once · that's $6.67/month</span>
       </p>
     </div>
   </div>
@@ -735,6 +735,12 @@
       localStorage.setItem('thera_lang', shouldBeFrench ? 'fr' : 'en');
     })();
     updateAppLinks();
+    // Update pricing display based on language
+    var isEn = document.body.classList.contains('lang-en');
+    var priceEl = document.getElementById('premium-price');
+    var periodEl = document.getElementById('premium-period');
+    if (priceEl) priceEl.textContent = isEn ? '$9.99' : '9,99€';
+    if (periodEl) periodEl.textContent = isEn ? 'per month' : 'par mois';
 
     function toggleBilling() {
       isAnnual = !isAnnual;
@@ -751,12 +757,12 @@
       labelAnnual.classList.toggle('active', isAnnual);
 
       if (isAnnual) {
-        priceEl.textContent = '79,99€';
-        periodEl.innerHTML = isEn ? '<span data-lang="en">per year</span>' : '<span data-lang="fr">par an</span>';
+        priceEl.textContent = isEn ? '$79.99' : '79,99€';
+        periodEl.textContent = isEn ? 'per year' : 'par an';
         noteEl.style.display = 'block';
       } else {
-        priceEl.textContent = '9,99€';
-        periodEl.innerHTML = isEn ? '<span data-lang="en">per month</span>' : '<span data-lang="fr">par mois</span>';
+        priceEl.textContent = isEn ? '$9.99' : '9,99€';
+        periodEl.textContent = isEn ? 'per month' : 'par mois';
         noteEl.style.display = 'none';
       }
     }
