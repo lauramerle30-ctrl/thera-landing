@@ -718,6 +718,7 @@
       document.documentElement.lang = isEn ? 'en' : 'fr';
       localStorage.setItem('thera_lang', isEn ? 'en' : 'fr');
       updateAppLinks();
+      updatePricing();
     }
 
     // English by default, French for French-speaking browsers or saved preference
@@ -735,7 +736,7 @@
       localStorage.setItem('thera_lang', shouldBeFrench ? 'fr' : 'en');
     })();
     updateAppLinks();
-    // Update pricing display based on language
+    function updatePricing() {
     var isEn = document.body.classList.contains('lang-en');
     var priceEl = document.getElementById('premium-price');
     var periodEl = document.getElementById('premium-period');
@@ -743,6 +744,8 @@
     const freeEl = document.getElementById('free-price');
     if (freeEl) freeEl.textContent = isEn ? 'Free' : '0€';
     if (periodEl) periodEl.textContent = isEn ? 'per month' : 'par mois';
+    }
+    updatePricing();
 
     function toggleBilling() {
       isAnnual = !isAnnual;
