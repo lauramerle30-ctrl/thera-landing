@@ -1,114 +1,386 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialité — Théra Daily</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Théra — Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for Théra Daily." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#1a1209" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
   <style>
-    :root { --brown: #3D2E24; --warm: #9E9488; --terra: #8B5E3C; --cream: #F5EFE6; }
+    :root {
+      --terra: #8B5E3C;
+      --terra-dark: #6B4226;
+      --terra-light: #A97B5A;
+      --cream: #F2EBE0;
+      --cream-dark: #E8DFD0;
+      --ivory: #FAF7F2;
+      --caramel: #C4956A;
+      --brown: #3D2E24;
+      --brown-deep: #2A1F18;
+      --warm: #9E9488;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--cream); color: var(--brown); line-height: 1.7; }
-    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
-    h1 { font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-    .updated { font-size: 13px; color: var(--warm); margin-bottom: 32px; }
-    h2 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--warm); margin: 32px 0 12px; }
-    p { font-size: 14px; margin-bottom: 8px; }
-    strong { color: var(--brown); }
-    a { color: var(--terra); }
-    .back { display: inline-block; margin-bottom: 24px; color: var(--terra); text-decoration: none; font-weight: 600; font-size: 14px; }
-    .footer { text-align: center; margin-top: 48px; font-size: 12px; color: var(--warm); }
-    .footer a { color: var(--terra); margin: 0 8px; }
-    @media (prefers-color-scheme: dark) { body { background: #1a1209; color: #e8ddd0; } h2 { color: #b0a090; } }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--brown);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+    body.lang-en [data-lang="fr"] { display: none; }
+    body.lang-en [data-lang="en"] { display: block; }
+    body:not(.lang-en) [data-lang="en"] { display: none; }
+    body:not(.lang-en) [data-lang="fr"] { display: block; }
+    body.lang-en span[data-lang="fr"] { display: none; }
+    body.lang-en span[data-lang="en"] { display: inline; }
+    body:not(.lang-en) span[data-lang="en"] { display: none; }
+    body:not(.lang-en) span[data-lang="fr"] { display: inline; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 32px;
+      background: rgba(242, 235, 224, 0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(61,46,36,0.06);
+    }
+    .nav-logo { display: flex; align-items: flex-end; gap: 0px; text-decoration: none; }
+    .nav-pillar { width: 5px; border-radius: 99px; background: var(--terra); }
+    .nav-pillar:nth-child(1) { height: 14px; }
+    .nav-pillar:nth-child(2) { height: 20px; }
+    .nav-pillar:nth-child(3) { height: 14px; }
+    .nav-name {
+      font-weight: 800; font-size: 12px; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--terra); margin-left: 8px; line-height: 20px;
+    }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-back {
+      font-size: 13px; font-weight: 500; color: var(--brown);
+      text-decoration: none; opacity: 0.7; transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 1; color: var(--terra); }
+    .lang-btn {
+      background: none; border: 1px solid rgba(61,46,36,0.12); border-radius: 8px;
+      padding: 5px 12px; font-family: 'DM Sans', sans-serif; font-size: 11px;
+      font-weight: 600; color: var(--warm); cursor: pointer; transition: all 0.2s;
+    }
+    .lang-btn:hover { border-color: var(--terra); color: var(--terra); }
+
+    /* CONTENT */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 140px 32px 80px;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: var(--brown-deep);
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: var(--warm);
+      margin-bottom: 48px;
+      letter-spacing: 0.02em;
+    }
+    h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--terra-dark);
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--brown-deep);
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 15px;
+      color: var(--brown);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+    ul {
+      margin: 0 0 20px 24px;
+    }
+    li {
+      font-size: 15px;
+      color: var(--brown);
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+    strong { color: var(--brown-deep); font-weight: 700; }
+    a { color: var(--terra); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(61,46,36,0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      font-size: 13px;
+      color: var(--warm);
+    }
+    .footer a { color: var(--warm); }
+    .footer a:hover { color: var(--terra); }
+
+    @media (max-width: 640px) {
+      .nav { padding: 12px 20px; }
+      .container { padding: 110px 20px 60px; }
+      h1 { font-size: 36px; }
+      h2 { font-size: 19px; }
+    }
   </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <nav class="nav">
+    <a href="/" class="nav-logo">
+      <div class="nav-pillar"></div>
+      <div class="nav-pillar"></div>
+      <div class="nav-pillar"></div>
+      <span class="nav-name">THÉRA</span>
+    </a>
+    <div class="nav-right">
+      <a href="/" class="nav-back"><span data-lang="fr">← Accueil</span><span data-lang="en">← Home</span></a>
+      <button class="lang-btn" onclick="toggleLang()"><span data-lang="fr">EN</span><span data-lang="en">FR</span></button>
+    </div>
+  </nav>
+
   <div class="container">
-    <a href="/" class="back">← Théra Daily</a>
-    <h1>Politique de confidentialité</h1>
-    <p class="updated">Dernière mise à jour : avril 2026</p>
 
-    <h2>Responsable du traitement</h2>
-    <p>LMT Labs (SASU) — Nice (06), France</p>
-    <p>SIREN : 103 510 186</p>
-    <p>Contact : contact@thera-app.com</p>
-    <p><strong>DPO :</strong> Non désigné (traitement non systématique à grande échelle au sens de l'art. 37 RGPD). Pour toute question relative à vos données : contact@thera-app.com.</p>
+    <!-- FRANÇAIS -->
+    <div data-lang="fr">
+      <h1>Politique de confidentialité</h1>
+      <p class="subtitle">Dernière mise à jour : avril 2026</p>
 
-    <h2>Base juridique</h2>
-    <p><strong>Consentement explicite (art. 6.1.a RGPD)</strong> : pour le coaching introspectif, le suivi d'humeur, le journal intime et l'utilisation d'outils symboliques (tarot, astrologie, numérologie).</p>
-    <p><strong>Consentement pour données sensibles (art. 9.2.a RGPD)</strong> : les données de bien-être (émotions, humeur, énergie) et les données à caractère spirituel/introspectif font l'objet d'un consentement spécifique lors de l'inscription.</p>
-    <p><strong>Exécution du contrat (art. 6.1.b RGPD)</strong> : pour la gestion du compte utilisateur, la facturation et la fourniture du service.</p>
+      <h2>Responsable du traitement</h2>
+      <p><strong>LMT Labs (SASU)</strong><br />
+      Siège social : 17 Rue Gounod, 06000 Nice, France<br />
+      Contact : <a href="mailto:contact@thera-app.com">contact@thera-app.com</a></p>
+      <p><strong>DPO :</strong> Non désigné (traitement non systématique à grande échelle au sens de l'art. 37 RGPD). Pour toute question relative à vos données : <a href="mailto:contact@thera-app.com">contact@thera-app.com</a>.</p>
 
-    <h2>Données collectées</h2>
-    <p><strong>Données d'identité :</strong> prénom, email, mot de passe (chiffré), langue, préférences de communication.</p>
-    <p><strong>Données de naissance :</strong> date, heure (optionnel), lieu (optionnel) — utilisées pour le calcul du thème natal et de la numérologie.</p>
-    <p><strong>Données de bien-être :</strong> check-ins quotidiens (humeur, énergie, intention, gratitude), entrées de journal, objectifs personnels.</p>
-    <p><strong>Données de conversation :</strong> messages échangés avec Théra, tirages de tarot, historique des sessions.</p>
-    <p><strong>Données techniques :</strong> logs de connexion, adresse IP, type de navigateur.</p>
+      <h2>Base juridique</h2>
+      <p><strong>Consentement explicite (art. 6.1.a RGPD) :</strong> pour le coaching introspectif, le suivi d'humeur, le journal intime et l'utilisation d'outils symboliques (tarot, astrologie, numérologie).</p>
+      <p><strong>Consentement pour données sensibles (art. 9.2.a RGPD) :</strong> les données de bien-être (émotions, humeur, énergie) et les données à caractère spirituel/introspectif font l'objet d'un consentement spécifique lors de l'inscription.</p>
+      <p><strong>Exécution du contrat (art. 6.1.b RGPD) :</strong> pour la gestion du compte utilisateur, la facturation et la fourniture du service.</p>
 
-    <h2>Finalités du traitement</h2>
-    <p><strong>Fourniture du service</strong> : personnalisation du coaching, calcul astrologique et numérologique.</p>
-    <p><strong>Amélioration du service</strong> : analyse agrégée et anonymisée des usages.</p>
-    <p><strong>Gestion de l'abonnement</strong> : facturation, gestion des accès premium.</p>
-    <p><strong>Sécurité</strong> : prévention des fraudes et abus.</p>
-    <p>Théra ne vend, ne loue et ne partage jamais vos données personnelles à des tiers à des fins commerciales.</p>
+      <h2>Données collectées</h2>
+      <ul>
+        <li><strong>Données d'identité :</strong> prénom, email, mot de passe (chiffré), langue, préférences de communication.</li>
+        <li><strong>Données de naissance :</strong> date, heure (optionnel), lieu (optionnel) — utilisées pour le calcul du thème natal et de la numérologie.</li>
+        <li><strong>Données de bien-être :</strong> check-ins quotidiens (humeur, énergie, intention, gratitude), entrées de journal, objectifs personnels.</li>
+        <li><strong>Données de conversation :</strong> messages échangés avec Théra, tirages de tarot, historique des sessions.</li>
+        <li><strong>Données techniques :</strong> logs de connexion, adresse IP, type de navigateur.</li>
+      </ul>
 
-    <h2>Sous-traitants et transferts hors UE</h2>
-    <p>Les données sont traitées par les sous-traitants suivants, tous encadrés par des Clauses Contractuelles Types (SCCs) conformément à l'article 46 du RGPD :</p>
-    <p><strong>Supabase Inc.</strong> (base de données, EU) — hébergement et stockage des données utilisateur</p>
-    <p><strong>Anthropic PBC</strong> (IA, USA) — génération des réponses de coaching. Les messages sont transmis à l'API Claude pour traitement immédiat, sans stockage persistant par Anthropic</p>
-    <p><strong>Stripe Inc.</strong> (paiement, USA) — traitement des paiements, certifié PCI-DSS niveau 1</p>
-    <p><strong>Apple Inc.</strong> (paiement iOS) — gestion des abonnements via App Store</p>
-    <p><strong>Railway Corp.</strong> (hébergement serveur, USA) — hébergement de l'application</p>
-    <p><strong>PostHog Ltd</strong> (analytics, EU) — analyse d'usage anonymisée, opt-in uniquement</p>
-    <p><strong>Resend Inc.</strong> (emails, USA) — emails transactionnels</p>
+      <h2>Finalités du traitement</h2>
+      <ul>
+        <li><strong>Fourniture du service :</strong> personnalisation du coaching, calcul astrologique et numérologique.</li>
+        <li><strong>Amélioration du service :</strong> analyse agrégée et anonymisée des usages.</li>
+        <li><strong>Gestion de l'abonnement :</strong> facturation, gestion des accès premium.</li>
+        <li><strong>Sécurité :</strong> prévention des fraudes et abus.</li>
+      </ul>
+      <p>Théra ne vend, ne loue et ne partage jamais vos données personnelles à des tiers à des fins commerciales.</p>
 
-    <h2>Durée de conservation</h2>
-    <p><strong>Compte actif :</strong> données conservées pendant toute la durée du compte.</p>
-    <p><strong>Compte inactif :</strong> suppression après 3 ans d'inactivité.</p>
-    <p><strong>Check-ins, journal, conversations :</strong> supprimés à la clôture du compte.</p>
-    <p><strong>Données de facturation :</strong> 10 ans après la dernière transaction (obligation comptable, art. L123-22 Code de commerce).</p>
-    <p><strong>Logs techniques (Sentry, PostHog) :</strong> 90 jours.</p>
-    <p><strong>Logs serveur :</strong> 12 mois.</p>
+      <h2>Sous-traitants et transferts hors UE</h2>
+      <p>Les données sont traitées par les sous-traitants suivants, tous encadrés par des Clauses Contractuelles Types (SCCs) conformément à l'article 46 du RGPD :</p>
+      <ul>
+        <li><strong>Supabase Inc.</strong> (base de données, USA/EU) — hébergement et stockage des données utilisateur</li>
+        <li><strong>Anthropic PBC</strong> (IA, USA) — génération des réponses de coaching. Les messages sont transmis à l'API Claude pour traitement immédiat, sans stockage persistant par Anthropic</li>
+        <li><strong>Stripe Inc.</strong> (paiement, USA) — traitement des paiements, certifié PCI-DSS niveau 1</li>
+        <li><strong>Railway Corp.</strong> (hébergement serveur, USA) — hébergement de l'application</li>
+        <li><strong>Resend Inc.</strong> (emails transactionnels, USA) — envoi d'emails de service (réinitialisation mot de passe)</li>
+      </ul>
+      <p><strong>Serveur applicatif :</strong> Railway (Google Cloud Platform, région europe-west1)<br />
+      <strong>Base de données :</strong> Supabase (AWS, région eu-west-3 — Paris)</p>
 
-    <h2>Vos droits</h2>
-    <p>Conformément au RGPD (Règlement UE 2016/679), vous disposez des droits suivants :</p>
-    <p><strong>Droit d'accès</strong> : obtenir une copie de vos données (Profil → Paramètres → Exporter mes données)</p>
-    <p><strong>Droit de rectification</strong> : corriger des données inexactes</p>
-    <p><strong>Droit à l'effacement</strong> : supprimer votre compte et toutes vos données (Profil → Paramètres → Supprimer mon compte)</p>
-    <p><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré (JSON)</p>
-    <p><strong>Droit d'opposition</strong> : vous opposer à certains traitements</p>
-    <p><strong>Droit à la limitation</strong> : limiter le traitement de vos données</p>
-    <p>Pour exercer ces droits : contact@thera-app.com. Réponse sous 30 jours.</p>
-    <p>Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr).</p>
+      <h2>Durée de conservation</h2>
+      <ul>
+        <li><strong>Compte actif :</strong> données conservées pendant toute la durée du compte.</li>
+        <li><strong>Compte inactif :</strong> suppression automatique après 3 ans d'inactivité.</li>
+        <li><strong>Check-ins, journal, conversations :</strong> supprimés à la clôture du compte.</li>
+        <li><strong>Données de facturation :</strong> 10 ans après la dernière transaction (obligation comptable, art. L123-22 Code de commerce).</li>
+        <li><strong>Logs analytics (PostHog, Sentry) :</strong> 90 jours.</li>
+        <li><strong>Logs serveur :</strong> 12 mois.</li>
+      </ul>
 
-    <h2>Cookies</h2>
-    <p>Théra utilise uniquement des cookies techniques strictement nécessaires au fonctionnement de l'application (session, authentification). L'analytics PostHog est activé uniquement après consentement explicite de l'utilisateur.</p>
+      <h2>Vos droits</h2>
+      <p>Conformément au RGPD (Règlement UE 2016/679), vous disposez des droits suivants :</p>
+      <ul>
+        <li><strong>Droit d'accès :</strong> obtenir une copie de vos données</li>
+        <li><strong>Droit de rectification :</strong> corriger des données inexactes</li>
+        <li><strong>Droit à l'effacement :</strong> supprimer votre compte et toutes vos données</li>
+        <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
+        <li><strong>Droit d'opposition :</strong> vous opposer à certains traitements</li>
+        <li><strong>Droit à la limitation :</strong> limiter le traitement de vos données</li>
+      </ul>
+      <p>Pour exercer ces droits : <a href="mailto:contact@thera-app.com">contact@thera-app.com</a>. Réponse sous 30 jours.</p>
+      <p>Vous pouvez également introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank">www.cnil.fr</a>).</p>
 
-    <h2>Données sensibles</h2>
-    <p>Les données de bien-être que vous partagez (émotions, santé mentale, croyances) sont considérées comme des données sensibles au sens du RGPD (art. 9). Elles sont traitées avec le plus haut niveau de confidentialité et ne sont utilisées qu'à la seule fin de personnaliser votre expérience Théra.</p>
+      <h2>Cookies</h2>
+      <p>Théra utilise uniquement des cookies techniques strictement nécessaires au fonctionnement de l'application (session, authentification). Aucun cookie publicitaire ou de tracking tiers n'est utilisé.</p>
 
-    <h2>Sécurité</h2>
-    <p>Théra met en œuvre les mesures techniques et organisationnelles suivantes :</p>
-    <p>• Chiffrement des mots de passe (bcrypt)</p>
-    <p>• Communications chiffrées (HTTPS/TLS)</p>
-    <p>• Authentification par token JWT avec expiration</p>
-    <p>• Accès aux données restreint au strict nécessaire</p>
-    <p>• Headers de sécurité (CSP, HSTS, X-Frame-Options)</p>
+      <h2>Données sensibles</h2>
+      <p>Les données de bien-être que vous partagez (émotions, santé mentale, croyances) sont considérées comme des données sensibles au sens du RGPD. Elles sont traitées avec le plus haut niveau de confidentialité et ne sont utilisées qu'à la seule fin de personnaliser votre expérience Théra.</p>
 
-    <h2>Intelligence artificielle</h2>
-    <p><strong>Modèle utilisé :</strong> Claude, développé par Anthropic PBC (USA).</p>
-    <p><strong>Finalité :</strong> coaching introspectif et développement personnel.</p>
-    <p><strong>Données transmises :</strong> messages de conversation et données de profil, pour traitement immédiat uniquement.</p>
-    <p><strong>Entraînement :</strong> vos données ne sont pas utilisées pour entraîner le modèle d'IA.</p>
+      <h2>Sécurité</h2>
+      <p>Théra met en œuvre les mesures techniques et organisationnelles suivantes :</p>
+      <ul>
+        <li>Chiffrement des mots de passe (bcrypt)</li>
+        <li>Communications chiffrées (HTTPS/TLS)</li>
+        <li>Authentification par token JWT avec expiration</li>
+        <li>Accès aux données restreint au strict nécessaire</li>
+        <li>Sauvegardes quotidiennes chiffrées</li>
+      </ul>
+    </div>
+
+    <!-- ENGLISH -->
+    <div data-lang="en">
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Last updated: April 2026</p>
+
+      <h2>Data Controller</h2>
+      <p><strong>LMT Labs (SASU)</strong><br />
+      Registered office: 17 Rue Gounod, 06000 Nice, France<br />
+      Contact: <a href="mailto:contact@thera-app.com">contact@thera-app.com</a></p>
+      <p><strong>DPO:</strong> Not designated (no large-scale systematic processing under Art. 37 GDPR). For any data-related questions: <a href="mailto:contact@thera-app.com">contact@thera-app.com</a>.</p>
+
+      <h2>Legal Basis</h2>
+      <p><strong>Explicit consent (Art. 6.1.a GDPR):</strong> for introspective coaching, mood tracking, personal journaling, and the use of symbolic tools (tarot, astrology, numerology).</p>
+      <p><strong>Consent for sensitive data (Art. 9.2.a GDPR):</strong> wellbeing data (emotions, mood, energy) and spiritual/introspective data are subject to specific consent at sign-up.</p>
+      <p><strong>Contract performance (Art. 6.1.b GDPR):</strong> for account management, billing, and service delivery.</p>
+
+      <h2>Data Collected</h2>
+      <ul>
+        <li><strong>Identity data:</strong> first name, email, password (encrypted), language, communication preferences.</li>
+        <li><strong>Birth data:</strong> date, time (optional), place (optional) — used for birth chart and numerology calculations.</li>
+        <li><strong>Wellbeing data:</strong> daily check-ins (mood, energy, intention, gratitude), journal entries, personal goals.</li>
+        <li><strong>Conversation data:</strong> messages exchanged with Théra, tarot draws, session history.</li>
+        <li><strong>Technical data:</strong> connection logs, IP address, browser type.</li>
+      </ul>
+
+      <h2>Processing Purposes</h2>
+      <ul>
+        <li><strong>Service delivery:</strong> coaching personalization, astrological and numerological calculations.</li>
+        <li><strong>Service improvement:</strong> aggregated and anonymized usage analysis.</li>
+        <li><strong>Subscription management:</strong> billing, premium access management.</li>
+        <li><strong>Security:</strong> fraud and abuse prevention.</li>
+      </ul>
+      <p>Théra never sells, rents, or shares your personal data with third parties for commercial purposes.</p>
+
+      <h2>Subprocessors and Transfers Outside the EU</h2>
+      <p>Data is processed by the following subprocessors, all governed by Standard Contractual Clauses (SCCs) under Article 46 of the GDPR:</p>
+      <ul>
+        <li><strong>Supabase Inc.</strong> (database, USA/EU) — user data hosting and storage</li>
+        <li><strong>Anthropic PBC</strong> (AI, USA) — coaching response generation. Messages are transmitted to the Claude API for immediate processing, with no persistent storage by Anthropic</li>
+        <li><strong>Stripe Inc.</strong> (payment, USA) — payment processing, PCI-DSS Level 1 certified</li>
+        <li><strong>Railway Corp.</strong> (server hosting, USA) — application hosting</li>
+        <li><strong>Resend Inc.</strong> (transactional emails, USA) — service email delivery (password reset)</li>
+      </ul>
+      <p><strong>Application server:</strong> Railway (Google Cloud Platform, europe-west1 region)<br />
+      <strong>Database:</strong> Supabase (AWS, eu-west-3 region — Paris)</p>
+
+      <h2>Retention Periods</h2>
+      <ul>
+        <li><strong>Active account:</strong> data retained throughout the account's lifetime.</li>
+        <li><strong>Inactive account:</strong> automatic deletion after 3 years of inactivity.</li>
+        <li><strong>Check-ins, journal, conversations:</strong> deleted upon account closure.</li>
+        <li><strong>Billing data:</strong> 10 years after the last transaction (accounting obligation, Art. L123-22 French Commercial Code).</li>
+        <li><strong>Analytics logs (PostHog, Sentry):</strong> 90 days.</li>
+        <li><strong>Server logs:</strong> 12 months.</li>
+      </ul>
+
+      <h2>Your Rights (GDPR)</h2>
+      <p>Under the GDPR (EU Regulation 2016/679), you have the following rights:</p>
+      <ul>
+        <li><strong>Right of access:</strong> obtain a copy of your data</li>
+        <li><strong>Right to rectification:</strong> correct inaccurate data</li>
+        <li><strong>Right to erasure:</strong> delete your account and all your data</li>
+        <li><strong>Right to portability:</strong> receive your data in a structured format</li>
+        <li><strong>Right to object:</strong> oppose certain processing activities</li>
+        <li><strong>Right to restriction:</strong> limit the processing of your data</li>
+      </ul>
+      <p>To exercise these rights: <a href="mailto:contact@thera-app.com">contact@thera-app.com</a>. Response within 30 days.</p>
+      <p>You may also lodge a complaint with the CNIL (French Data Protection Authority): <a href="https://www.cnil.fr" target="_blank">www.cnil.fr</a>.</p>
+
+      <h2>California Residents (CCPA / CPRA)</h2>
+      <p>If you are a California resident, the California Consumer Privacy Act (CCPA), as amended by the California Privacy Rights Act (CPRA), grants you the following additional rights:</p>
+      <ul>
+        <li><strong>Right to know:</strong> the categories of personal information we collect, the sources, the purposes, and the third parties with whom we share it.</li>
+        <li><strong>Right to delete:</strong> request deletion of personal information we have collected from you.</li>
+        <li><strong>Right to correct:</strong> request correction of inaccurate personal information.</li>
+        <li><strong>Right to opt-out:</strong> Théra does not sell or share your personal information for cross-context behavioral advertising. There is no opt-out required because we do not engage in these activities.</li>
+        <li><strong>Right to limit use of sensitive personal information:</strong> we only use sensitive personal information (wellbeing data) for the purpose of providing the service you requested.</li>
+        <li><strong>Right to non-discrimination:</strong> we will not discriminate against you for exercising any of these rights.</li>
+      </ul>
+      <p>To exercise your CCPA rights: <a href="mailto:contact@thera-app.com">contact@thera-app.com</a>. We will respond within 45 days. You may also designate an authorized agent to make a request on your behalf.</p>
+      <p><strong>Categories of personal information collected in the past 12 months:</strong> identifiers (email, name), commercial information (subscription history), internet activity (usage logs), geolocation (approximate, from IP), inferences (preferences), and sensitive personal information (wellbeing data, with consent).</p>
+
+      <h2>Cookies</h2>
+      <p>Théra only uses technical cookies strictly necessary for the application to function (session, authentication). No advertising or third-party tracking cookies are used.</p>
+
+      <h2>Sensitive Data</h2>
+      <p>The wellbeing data you share (emotions, mental health, beliefs) is considered sensitive data under the GDPR and CCPA. It is processed with the highest level of confidentiality and used solely to personalize your Théra experience.</p>
+
+      <h2>Security</h2>
+      <p>Théra implements the following technical and organizational measures:</p>
+      <ul>
+        <li>Password encryption (bcrypt)</li>
+        <li>Encrypted communications (HTTPS/TLS)</li>
+        <li>JWT token authentication with expiration</li>
+        <li>Strict need-to-know data access</li>
+        <li>Daily encrypted backups</li>
+      </ul>
+    </div>
 
     <div class="footer">
-      <p>© 2026 LMT Labs · Théra Daily</p>
-      <a href="/terms.html">CGU</a>
-      <a href="/">Accueil</a>
-      <a href="mailto:contact@thera-app.com">Contact</a>
+      <span>© 2026 LMT Labs · Théra Daily</span>
+      <a href="/terms.html"><span data-lang="fr">Mentions légales</span><span data-lang="en">Terms & Legal</span></a>
+      <a href="/"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
+      <a href="mailto:contact@thera-app.com">contact@thera-app.com</a>
     </div>
+
   </div>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('lang-en');
+      const isEn = document.body.classList.contains('lang-en');
+      document.documentElement.lang = isEn ? 'en' : 'fr';
+      localStorage.setItem('thera_lang', isEn ? 'en' : 'fr');
+    }
+    (function initLang() {
+      var saved = localStorage.getItem('thera_lang');
+      var browserLang = navigator.language || '';
+      var shouldBeFrench = saved === 'fr' || (!saved && browserLang.startsWith('fr'));
+      if (!shouldBeFrench) {
+        document.body.classList.add('lang-en');
+        document.documentElement.lang = 'en';
+      } else {
+        document.body.classList.remove('lang-en');
+        document.documentElement.lang = 'fr';
+      }
+      localStorage.setItem('thera_lang', shouldBeFrench ? 'fr' : 'en');
+    })();
+  </script>
 </body>
 </html>

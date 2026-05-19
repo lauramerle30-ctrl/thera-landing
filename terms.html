@@ -1,98 +1,500 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conditions Générales d'Utilisation — Théra Daily</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Théra — Terms & Legal</title>
+  <meta name="description" content="Terms of Service, Terms of Sale, and Legal Notice for Théra Daily." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#1a1209" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
   <style>
-    :root { --brown: #3D2E24; --warm: #9E9488; --terra: #8B5E3C; --cream: #F5EFE6; }
+    :root {
+      --terra: #8B5E3C;
+      --terra-dark: #6B4226;
+      --terra-light: #A97B5A;
+      --cream: #F2EBE0;
+      --cream-dark: #E8DFD0;
+      --ivory: #FAF7F2;
+      --caramel: #C4956A;
+      --brown: #3D2E24;
+      --brown-deep: #2A1F18;
+      --warm: #9E9488;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--cream); color: var(--brown); line-height: 1.7; }
-    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
-    h1 { font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-    .updated { font-size: 13px; color: var(--warm); margin-bottom: 32px; }
-    h2 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--warm); margin: 32px 0 12px; }
-    p { font-size: 14px; margin-bottom: 8px; }
-    strong { color: var(--brown); }
-    a { color: var(--terra); }
-    .back { display: inline-block; margin-bottom: 24px; color: var(--terra); text-decoration: none; font-weight: 600; font-size: 14px; }
-    .footer { text-align: center; margin-top: 48px; font-size: 12px; color: var(--warm); }
-    .footer a { color: var(--terra); margin: 0 8px; }
-    @media (prefers-color-scheme: dark) { body { background: #1a1209; color: #e8ddd0; } h2 { color: #b0a090; } }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--brown);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+    body.lang-en [data-lang="fr"] { display: none; }
+    body.lang-en [data-lang="en"] { display: block; }
+    body:not(.lang-en) [data-lang="en"] { display: none; }
+    body:not(.lang-en) [data-lang="fr"] { display: block; }
+    body.lang-en span[data-lang="fr"] { display: none; }
+    body.lang-en span[data-lang="en"] { display: inline; }
+    body:not(.lang-en) span[data-lang="en"] { display: none; }
+    body:not(.lang-en) span[data-lang="fr"] { display: inline; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 32px;
+      background: rgba(242, 235, 224, 0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(61,46,36,0.06);
+    }
+    .nav-logo { display: flex; align-items: flex-end; gap: 0px; text-decoration: none; }
+    .nav-pillar { width: 5px; border-radius: 99px; background: var(--terra); }
+    .nav-pillar:nth-child(1) { height: 14px; }
+    .nav-pillar:nth-child(2) { height: 20px; }
+    .nav-pillar:nth-child(3) { height: 14px; }
+    .nav-name {
+      font-weight: 800; font-size: 12px; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--terra); margin-left: 8px; line-height: 20px;
+    }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-back {
+      font-size: 13px; font-weight: 500; color: var(--brown);
+      text-decoration: none; opacity: 0.7; transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 1; color: var(--terra); }
+    .lang-btn {
+      background: none; border: 1px solid rgba(61,46,36,0.12); border-radius: 8px;
+      padding: 5px 12px; font-family: 'DM Sans', sans-serif; font-size: 11px;
+      font-weight: 600; color: var(--warm); cursor: pointer; transition: all 0.2s;
+    }
+    .lang-btn:hover { border-color: var(--terra); color: var(--terra); }
+
+    /* CONTENT */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 140px 32px 80px;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: var(--brown-deep);
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: var(--warm);
+      margin-bottom: 32px;
+      letter-spacing: 0.02em;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(61,46,36,0.08);
+    }
+    .tab {
+      background: none;
+      border: 1px solid rgba(61,46,36,0.12);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--warm);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .tab:hover { border-color: var(--terra); color: var(--terra); }
+    .tab.active { background: var(--terra); border-color: var(--terra); color: var(--ivory); }
+    .section { display: none; }
+    .section.active { display: block; }
+    h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--terra-dark);
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+    h2:first-of-type { margin-top: 0; }
+    p {
+      font-size: 15px;
+      color: var(--brown);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+    ul {
+      margin: 0 0 20px 24px;
+    }
+    li {
+      font-size: 15px;
+      color: var(--brown);
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+    strong { color: var(--brown-deep); font-weight: 700; }
+    a { color: var(--terra); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(61,46,36,0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      font-size: 13px;
+      color: var(--warm);
+    }
+    .footer a { color: var(--warm); }
+    .footer a:hover { color: var(--terra); }
+
+    @media (max-width: 640px) {
+      .nav { padding: 12px 20px; }
+      .container { padding: 110px 20px 60px; }
+      h1 { font-size: 36px; }
+      h2 { font-size: 19px; }
+    }
   </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <nav class="nav">
+    <a href="/" class="nav-logo">
+      <div class="nav-pillar"></div>
+      <div class="nav-pillar"></div>
+      <div class="nav-pillar"></div>
+      <span class="nav-name">THÉRA</span>
+    </a>
+    <div class="nav-right">
+      <a href="/" class="nav-back"><span data-lang="fr">← Accueil</span><span data-lang="en">← Home</span></a>
+      <button class="lang-btn" onclick="toggleLang()"><span data-lang="fr">EN</span><span data-lang="en">FR</span></button>
+    </div>
+  </nav>
+
   <div class="container">
-    <a href="/" class="back">← Théra Daily</a>
-    <h1>Conditions Générales d'Utilisation</h1>
-    <p class="updated">Dernière mise à jour : avril 2026</p>
 
-    <h2>1. Objet</h2>
-    <p>Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation de l'application Théra, coach intérieur propulsé par intelligence artificielle, éditée par LMT Labs (SASU), SIREN 103 510 186, Nice (06), France.</p>
-    <p>En créant un compte, l'utilisateur accepte sans réserve les présentes CGU.</p>
+    <h1 data-lang="fr">Mentions légales</h1>
+    <h1 data-lang="en">Terms & Legal</h1>
+    <p class="subtitle" data-lang="fr">Dernière mise à jour : avril 2026</p>
+    <p class="subtitle" data-lang="en">Last updated: April 2026</p>
 
-    <h2>2. Nature du service</h2>
-    <p>Théra Daily est une application de coaching intérieur utilisant l'intelligence artificielle, le tarot, l'astrologie et la numérologie à des fins de développement personnel uniquement.</p>
-    <p><strong>Les interprétations fournies ne constituent en aucun cas un diagnostic médical, psychologique ou thérapeutique.</strong> En cas de difficulté psychologique, nous vous invitons à consulter un professionnel de santé qualifié.</p>
+    <div class="tabs">
+      <button class="tab active" data-tab="legal"><span data-lang="fr">Mentions</span><span data-lang="en">Legal Notice</span></button>
+      <button class="tab" data-tab="tos"><span data-lang="fr">CGU</span><span data-lang="en">Terms of Use</span></button>
+      <button class="tab" data-tab="tosale"><span data-lang="fr">CGV</span><span data-lang="en">Terms of Sale</span></button>
+    </div>
 
-    <h2>3. Description du service</h2>
-    <p>Théra est une application de développement personnel qui propose :</p>
-    <p>• Un coaching quotidien par intelligence artificielle (Claude d'Anthropic)</p>
-    <p>• Des outils de réflexion : tarot symbolique, astrologie, numérologie</p>
-    <p>• Un journal intime numérique</p>
-    <p>• Un suivi de check-ins quotidiens (humeur, énergie, intentions)</p>
-    <p>• Un suivi d'objectifs personnels</p>
+    <!-- ========== MENTIONS LÉGALES / LEGAL NOTICE ========== -->
+    <div class="section active" id="legal">
 
-    <h2>4. Limites du service</h2>
-    <p><strong>Théra n'est pas un service médical ou psychologique.</strong> L'application ne remplace en aucun cas un professionnel de santé mentale.</p>
-    <p>En cas de détresse psychologique sévère, contactez :</p>
-    <p>• France : 3114 (numéro national de prévention du suicide, 24h/24)</p>
-    <p>• Belgique : 0800 32 123</p>
-    <p>• Suisse : 143 (La Main Tendue)</p>
-    <p>• International : <a href="https://findahelpline.com">findahelpline.com</a></p>
+      <!-- FR -->
+      <div data-lang="fr">
+        <h2>Éditeur</h2>
+        <p>Théra Daily est édité par <strong>LMT Labs (SASU)</strong>.<br />
+        Contact : <a href="mailto:contact@thera-app.com">contact@thera-app.com</a><br />
+        Siège social : 17 Rue Gounod, 06000 Nice, France<br />
+        SIREN : 103 510 186<br />
+        Directeur de la publication : LMT Labs (SASU)</p>
 
-    <h2>5. Compte utilisateur</h2>
-    <p>L'utilisateur s'engage à fournir des informations exactes lors de la création de son compte. Il est seul responsable de la confidentialité de ses identifiants.</p>
+        <h2>Hébergement</h2>
+        <p><strong>Serveur applicatif :</strong> Railway Corp., 548 Market St, San Francisco, CA 94104, USA — <a href="https://railway.app" target="_blank">https://railway.app</a><br />
+        <strong>Base de données :</strong> Supabase (AWS, région eu-west-3 — Paris)<br />
+        <strong>Landing page :</strong> GitHub Pages, GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</p>
 
-    <h2>6. Abonnements et tarifs</h2>
-    <p><strong>Offre gratuite :</strong> 3 messages/jour, 1 tirage tarot/jour, check-in quotidien, 1 module.</p>
-    <p><strong>Premium mensuel :</strong> 9,99€/mois (ou équivalent local).</p>
-    <p><strong>Premium annuel :</strong> 79,99€/an (soit 6,67€/mois, économie de 33%).</p>
-    <p>Les abonnements sont renouvelés automatiquement sauf résiliation au moins 24h avant la fin de la période en cours.</p>
-    <p><strong>iOS :</strong> les paiements sont gérés par Apple via l'App Store. Gestion et résiliation depuis Réglages → votre nom → Abonnements.</p>
-    <p><strong>Web :</strong> les paiements sont traités par Stripe. Gestion depuis Profil → Paramètres.</p>
+        <h2>Intelligence artificielle</h2>
+        <p>Théra Daily utilise l'intelligence artificielle (Claude, Anthropic PBC) pour générer des contenus à visée introspective. Ces contenus ne constituent en aucun cas des conseils médicaux, psychologiques ou financiers.</p>
 
-    <h2>7. Droit de rétractation et remboursements</h2>
-    <p>Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation ne s'applique pas aux contenus numériques fournis immédiatement après l'achat avec accord express du consommateur.</p>
-    <p>Les remboursements iOS sont gérés par Apple selon leurs politiques respectives.</p>
+        <h2>Propriété intellectuelle</h2>
+        <p>L'ensemble des contenus, marques, logos et logiciels de Théra Daily sont la propriété exclusive de LMT Labs (SASU). Toute reproduction sans autorisation préalable est interdite.</p>
+      </div>
 
-    <h2>8. Propriété intellectuelle</h2>
-    <p>L'ensemble des éléments de Théra (design, code, contenu, marque) sont la propriété exclusive de LMT Labs. Toute reproduction sans autorisation est interdite.</p>
-    <p>Les contenus générés par l'utilisateur (journal, messages) restent sa propriété.</p>
+      <!-- EN -->
+      <div data-lang="en">
+        <h2>Publisher</h2>
+        <p>Théra Daily is published by <strong>LMT Labs (SASU)</strong>.<br />
+        Contact: <a href="mailto:contact@thera-app.com">contact@thera-app.com</a><br />
+        Registered office: 17 Rue Gounod, 06000 Nice, France<br />
+        SIREN: 103 510 186<br />
+        Publication Director: LMT Labs (SASU)</p>
 
-    <h2>9. Limitation de responsabilité</h2>
-    <p>Les contenus générés (coaching, tarot, astrologie, numérologie) ont une visée exclusivement introspective. LMT Labs ne saurait être tenu responsable des décisions prises sur la base de ces contenus.</p>
+        <h2>Hosting</h2>
+        <p><strong>Application server:</strong> Railway Corp., 548 Market St, San Francisco, CA 94104, USA — <a href="https://railway.app" target="_blank">https://railway.app</a><br />
+        <strong>Database:</strong> Supabase (AWS, eu-west-3 region — Paris)<br />
+        <strong>Landing page:</strong> GitHub Pages, GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</p>
 
-    <h2>10. Suppression de compte</h2>
-    <p>L'utilisateur peut supprimer son compte à tout moment depuis Profil → Paramètres → Supprimer mon compte. La suppression entraîne l'effacement définitif de toutes les données sous 30 jours.</p>
+        <h2>Artificial Intelligence</h2>
+        <p>Théra Daily uses artificial intelligence (Claude, Anthropic PBC) to generate content for introspective purposes. This content does not constitute medical, psychological, or financial advice.</p>
 
-    <h2>11. Transparence IA (AI Act UE)</h2>
-    <p><strong>Modèle utilisé :</strong> Claude, développé par Anthropic PBC (USA).</p>
-    <p><strong>Finalité :</strong> coaching introspectif et développement personnel.</p>
-    <p><strong>Données :</strong> les messages de conversation et données de profil sont envoyés à l'API Anthropic pour générer des réponses. Ces données ne sont pas utilisées pour entraîner le modèle.</p>
-    <p><strong>Droit d'opposition :</strong> vous pouvez demander la suppression de vos données à tout moment via contact@thera-app.com.</p>
+        <h2>Intellectual Property</h2>
+        <p>All content, trademarks, logos, and software of Théra Daily are the exclusive property of LMT Labs (SASU). Any reproduction without prior authorization is prohibited.</p>
+      </div>
+    </div>
 
-    <h2>12. Droit applicable</h2>
-    <p>Les présentes CGU sont soumises au droit français. En cas de litige, les tribunaux de Nice seront seuls compétents.</p>
+    <!-- ========== CGU / TERMS OF USE ========== -->
+    <div class="section" id="tos">
+
+      <!-- FR -->
+      <div data-lang="fr">
+        <h2>1. Objet</h2>
+        <p>Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation de l'application Théra, coach intérieur propulsé par intelligence artificielle, éditée par LMT Labs (SASU).</p>
+        <p>En créant un compte, l'utilisateur accepte sans réserve les présentes CGU.</p>
+
+        <h2>2. Nature du service</h2>
+        <p>Théra Daily est une application de coaching intérieur utilisant l'intelligence artificielle, le tarot, l'astrologie et la numérologie à des fins de développement personnel uniquement. Les interprétations fournies ne constituent en aucun cas un diagnostic médical, psychologique ou thérapeutique. En cas de difficulté psychologique, nous vous invitons à consulter un professionnel de santé qualifié.</p>
+        <p>Les interprétations générées par l'intelligence artificielle de Théra sont fournies à titre informatif et divertissant uniquement. Elles ne constituent pas des conseils médicaux, psychologiques, financiers ou juridiques. LMT Labs (SASU) ne saurait être tenue responsable des décisions prises par l'utilisateur sur la base de ces interprétations.</p>
+
+        <h2>3. Description du service</h2>
+        <p>Théra est une application de développement personnel qui propose :</p>
+        <ul>
+          <li>Un coaching quotidien par intelligence artificielle (Claude d'Anthropic)</li>
+          <li>Des outils de réflexion : tarot symbolique, astrologie, numérologie</li>
+          <li>Un journal intime numérique</li>
+          <li>Un suivi de check-ins quotidiens (humeur, énergie, intentions)</li>
+          <li>Un suivi d'objectifs personnels</li>
+        </ul>
+
+        <h2>4. Limites du service</h2>
+        <p>Théra n'est pas un service médical ou psychologique. L'application ne remplace en aucun cas un professionnel de santé mentale, un psychologue, un psychiatre ou tout autre professionnel de santé.</p>
+        <p>En cas de détresse psychologique sévère, l'utilisateur est invité à contacter :</p>
+        <ul>
+          <li><strong>France :</strong> 3114 (numéro national de prévention du suicide, 24h/24)</li>
+          <li><strong>Belgique :</strong> 0800 32 123</li>
+          <li><strong>Suisse :</strong> 143 (La Main Tendue)</li>
+        </ul>
+        <p>Les réponses de Théra sont générées par IA et ne constituent pas des avis médicaux, psychologiques ou ésotériques professionnels.</p>
+
+        <h2>5. Compte utilisateur</h2>
+        <p>L'utilisateur s'engage à fournir des informations exactes lors de la création de son compte. Il est seul responsable de la confidentialité de ses identifiants.</p>
+        <p>Théra se réserve le droit de suspendre ou supprimer tout compte en cas d'utilisation abusive, frauduleuse ou contraire aux présentes CGU.</p>
+
+        <h2>6. Utilisation acceptable</h2>
+        <p>L'utilisateur s'engage à ne pas utiliser Théra pour :</p>
+        <ul>
+          <li>Tenter d'extraire des informations personnelles d'autres utilisateurs</li>
+          <li>Contourner les systèmes de sécurité ou de limitation d'accès</li>
+          <li>Utiliser l'application à des fins commerciales sans autorisation préalable</li>
+          <li>Générer, diffuser ou stocker du contenu illégal ou préjudiciable</li>
+        </ul>
+
+        <h2>7. Propriété intellectuelle</h2>
+        <p>L'ensemble des éléments de Théra (design, code, contenu, marque) sont la propriété exclusive de LMT Labs (SASU). Toute reproduction sans autorisation est interdite.</p>
+        <p>Les contenus générés par l'utilisateur (journal, messages) restent sa propriété. Il accorde à Théra une licence limitée pour les traiter dans le cadre du service.</p>
+
+        <h2>8. Limitation de responsabilité</h2>
+        <p>Théra Daily fournit des outils d'introspection et de développement personnel assistés par intelligence artificielle. Les contenus générés (coaching, interprétations de tarot, analyse astrologique, numérologie) ont une visée exclusivement introspective et ne se substituent en aucun cas à un avis médical, psychologique, psychiatrique ou financier professionnel.</p>
+        <p>LMT Labs (SASU) ne saurait être tenu responsable des décisions prises par l'utilisateur sur la base des contenus générés par l'application.</p>
+        <p>Théra s'engage à assurer la disponibilité du service dans la limite des moyens techniques raisonnables. En cas d'interruption pour maintenance, l'utilisateur sera informé dans la mesure du possible.</p>
+
+        <h2>9. Modification et résiliation</h2>
+        <p>Théra se réserve le droit de modifier les CGU à tout moment. L'utilisateur sera notifié par email. La poursuite de l'utilisation du service vaut acceptation des nouvelles conditions.</p>
+        <p>L'utilisateur peut supprimer son compte à tout moment depuis les paramètres de l'application, entraînant la suppression définitive de ses données.</p>
+
+        <h2>10. Droit applicable</h2>
+        <p>Les présentes CGU sont soumises au droit français. En cas de litige, et après tentative de résolution amiable, les tribunaux français seront seuls compétents.</p>
+
+        <h2>11. Transparence IA (AI Act UE)</h2>
+        <p><strong>Modèle utilisé :</strong> Claude, développé par Anthropic PBC (USA).</p>
+        <p><strong>Finalité :</strong> coaching introspectif et développement personnel. Aucun diagnostic médical ou psychologique.</p>
+        <p><strong>Données :</strong> les messages de conversation et données de profil sont envoyés à l'API Anthropic pour générer des réponses. Ces données ne sont pas utilisées pour entraîner le modèle.</p>
+        <p><strong>Droit d'opposition :</strong> vous pouvez demander la suppression de vos données à tout moment via <a href="mailto:contact@thera-app.com">contact@thera-app.com</a>.</p>
+      </div>
+
+      <!-- EN -->
+      <div data-lang="en">
+        <h2>1. Purpose</h2>
+        <p>These Terms of Use govern access to and use of the Théra application, an AI-powered inner coach published by LMT Labs (SASU).</p>
+        <p>By creating an account, the user fully accepts these Terms.</p>
+
+        <h2>2. Nature of the Service</h2>
+        <p>Théra Daily is an inner-coaching application using artificial intelligence, tarot, astrology, and numerology for personal development purposes only. Interpretations provided do not constitute a medical, psychological, or therapeutic diagnosis. In case of psychological distress, please consult a qualified health professional.</p>
+        <p>Interpretations generated by Théra's AI are provided for informational and entertainment purposes only. They do not constitute medical, psychological, financial, or legal advice. LMT Labs (SASU) cannot be held responsible for decisions made by the user based on these interpretations.</p>
+
+        <h2>3. Description of the Service</h2>
+        <p>Théra is a personal development application offering:</p>
+        <ul>
+          <li>Daily AI coaching (Claude by Anthropic)</li>
+          <li>Reflection tools: symbolic tarot, astrology, numerology</li>
+          <li>A digital personal journal</li>
+          <li>Daily check-ins (mood, energy, intentions)</li>
+          <li>Personal goal tracking</li>
+        </ul>
+
+        <h2>4. Service Limitations</h2>
+        <p>Théra is not a medical or psychological service. The application does not replace a mental health professional, psychologist, psychiatrist, or any other healthcare provider.</p>
+        <p>In case of severe psychological distress, the user is invited to contact:</p>
+        <ul>
+          <li><strong>United States:</strong> 988 (Suicide and Crisis Lifeline, 24/7)</li>
+          <li><strong>United Kingdom:</strong> 116 123 (Samaritans, 24/7)</li>
+          <li><strong>France:</strong> 3114 (national suicide prevention line, 24/7)</li>
+          <li><strong>International:</strong> <a href="https://findahelpline.com" target="_blank">findahelpline.com</a></li>
+        </ul>
+        <p>Théra's responses are AI-generated and do not constitute professional medical, psychological, or esoteric advice.</p>
+
+        <h2>5. User Account</h2>
+        <p>The user commits to providing accurate information when creating an account and is solely responsible for the confidentiality of their credentials.</p>
+        <p>Théra reserves the right to suspend or delete any account in case of abusive, fraudulent, or non-compliant use.</p>
+
+        <h2>6. Acceptable Use</h2>
+        <p>The user agrees not to use Théra to:</p>
+        <ul>
+          <li>Attempt to extract personal information from other users</li>
+          <li>Circumvent security or access-limitation systems</li>
+          <li>Use the application for commercial purposes without prior authorization</li>
+          <li>Generate, distribute, or store illegal or harmful content</li>
+        </ul>
+
+        <h2>7. Intellectual Property</h2>
+        <p>All elements of Théra (design, code, content, brand) are the exclusive property of LMT Labs (SASU). Any reproduction without authorization is prohibited.</p>
+        <p>Content generated by the user (journal entries, messages) remains their property. The user grants Théra a limited license to process it within the scope of the service.</p>
+
+        <h2>8. Limitation of Liability</h2>
+        <p>Théra Daily provides AI-assisted introspection and personal development tools. Generated content (coaching, tarot interpretations, astrological analysis, numerology) is for introspective purposes only and is not a substitute for professional medical, psychological, psychiatric, or financial advice.</p>
+        <p>LMT Labs (SASU) cannot be held responsible for decisions made by the user based on content generated by the application.</p>
+        <p>Théra commits to ensuring service availability within the limits of reasonable technical means. In case of maintenance interruption, users will be informed when possible.</p>
+
+        <h2>9. Modification and Termination</h2>
+        <p>Théra reserves the right to modify these Terms at any time. Users will be notified by email. Continued use of the service constitutes acceptance of the new terms.</p>
+        <p>Users may delete their account at any time from the application settings, which will result in permanent deletion of their data.</p>
+
+        <h2>10. Governing Law</h2>
+        <p>These Terms are governed by French law. In case of dispute, and after an attempt at amicable resolution, French courts will have exclusive jurisdiction.</p>
+
+        <h2>11. AI Transparency (EU AI Act)</h2>
+        <p><strong>Model used:</strong> Claude, developed by Anthropic PBC (USA).</p>
+        <p><strong>Purpose:</strong> introspective coaching and personal development. No medical or psychological diagnosis.</p>
+        <p><strong>Data:</strong> conversation messages and profile data are sent to the Anthropic API to generate responses. These data are not used to train the model.</p>
+        <p><strong>Right to object:</strong> you may request deletion of your data at any time via <a href="mailto:contact@thera-app.com">contact@thera-app.com</a>.</p>
+      </div>
+    </div>
+
+    <!-- ========== CGV / TERMS OF SALE ========== -->
+    <div class="section" id="tosale">
+
+      <!-- FR -->
+      <div data-lang="fr">
+        <h2>1. Éditeur</h2>
+        <p><strong>LMT Labs (SASU)</strong><br />
+        Siège social : 17 Rue Gounod, 06000 Nice, France<br />
+        SIREN : 103 510 186<br />
+        Contact : <a href="mailto:contact@thera-app.com">contact@thera-app.com</a></p>
+
+        <h2>2. Offres et tarifs</h2>
+        <p><strong>Plan Gratuit</strong> — Accès limité : 1 tirage tarot/jour, 3 messages/jour. Gratuit, sans engagement.</p>
+        <p><strong>Plan Premium Mensuel</strong> — 9,99€ TTC/mois. Accès illimité à toutes les fonctionnalités. Sans engagement, résiliable à tout moment.</p>
+        <p><strong>Plan Premium Annuel</strong> — 79,99€ TTC/an (soit 6,67€/mois). Accès illimité. Engagement d'un an.</p>
+        <p>Les prix sont indiqués en euros TTC. Les prix peuvent varier selon la devise locale au moment de l'achat. Théra se réserve le droit de modifier ses tarifs avec un préavis de 30 jours.</p>
+
+        <h2>3. Paiement</h2>
+        <p>Le traitement du paiement dépend de votre plateforme de souscription : <strong>Stripe</strong> (certifié PCI-DSS niveau 1) pour les abonnements souscrits sur le web à app.thera-app.com, <strong>Apple In-App Purchase</strong> pour les abonnements souscrits depuis l'application iOS, et <strong>Google Play Billing</strong> pour les abonnements souscrits depuis l'application Android. Théra ne stocke aucune donnée bancaire.</p>
+        <p>L'abonnement est automatiquement renouvelé à échéance, sauf résiliation préalable. La facturation du renouvellement est gérée par le prestataire de paiement correspondant à votre plateforme d'achat.</p>
+
+        <h2>4. Droit de rétractation</h2>
+        <p>Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation de 14 jours ne s'applique pas aux contenus numériques dont l'exécution a commencé avec l'accord de l'utilisateur.</p>
+        <p>Toutefois, si vous n'êtes pas satisfait dans les 7 premiers jours suivant votre souscription, contactez-nous à <a href="mailto:contact@thera-app.com">contact@thera-app.com</a> et nous étudierons votre demande de remboursement.</p>
+
+        <h2>5. Résiliation et remboursements</h2>
+        <p>Vous pouvez résilier votre abonnement à tout moment depuis la section « Mon abonnement » de l'application ou via votre compte Apple (App Store) ou Google (Play Store) selon votre plateforme d'achat.</p>
+        <p>En cas de résiliation, l'accès aux fonctionnalités Premium est maintenu jusqu'à la fin de la période d'abonnement en cours. Aucun remboursement ne sera effectué pour la période restante, sauf obligation légale contraire ou si la demande est effectuée dans les 14 jours suivant la première souscription (droit de rétractation — art. L221-18 du Code de la consommation, applicable uniquement si l'abonnement n'a pas encore été utilisé).</p>
+        <p>LMT Labs (SASU) se réserve le droit de modifier les tarifs avec un préavis de 30 jours par email.</p>
+
+        <h2>6. Codes promotionnels</h2>
+        <p>Les codes promotionnels offrent un accès Premium temporaire. Ils sont nominatifs, non cessibles et non cumulables. Un seul code peut être utilisé par compte. La durée d'accès offert est précisée au moment de l'activation.</p>
+
+        <h2>7. Responsabilité</h2>
+        <p>Théra s'engage à assurer la disponibilité du service à hauteur de 99% par mois, hors maintenance planifiée. En cas d'interruption prolongée, un avoir pourra être accordé sur demande.</p>
+      </div>
+
+      <!-- EN -->
+      <div data-lang="en">
+        <h2>1. Publisher</h2>
+        <p><strong>LMT Labs (SASU)</strong><br />
+        Registered office: 17 Rue Gounod, 06000 Nice, France<br />
+        SIREN: 103 510 186<br />
+        Contact: <a href="mailto:contact@thera-app.com">contact@thera-app.com</a></p>
+
+        <h2>2. Plans and Pricing</h2>
+        <p><strong>Free Plan</strong> — Limited access: 1 tarot draw/day, 3 messages/day. Free, no commitment.</p>
+        <p><strong>Monthly Premium Plan</strong> — $9.99/month (or local currency equivalent). Unlimited access to all features. No commitment, cancelable at any time.</p>
+        <p><strong>Annual Premium Plan</strong> — $79.99/year (approximately $6.67/month). Unlimited access. One-year commitment.</p>
+        <p>Prices are displayed in USD on the international version. Local currency and applicable taxes are applied at checkout based on your region. Théra reserves the right to modify pricing with 30 days' notice.</p>
+
+        <h2>3. Payment</h2>
+        <p>Payment processing depends on your subscription platform: <strong>Stripe</strong> (PCI-DSS Level 1 certified) for web subscriptions at app.thera-app.com, <strong>Apple In-App Purchase</strong> for subscriptions made within the iOS app, and <strong>Google Play Billing</strong> for subscriptions made within the Android app. Théra does not store any payment data.</p>
+        <p>Subscriptions automatically renew at expiration unless previously cancelled. Renewal billing is handled by the payment provider corresponding to your purchase platform.</p>
+
+        <h2>4. Right of Withdrawal / Refunds</h2>
+        <p>Under Article L221-28 of the French Consumer Code, the 14-day right of withdrawal does not apply to digital content whose performance has begun with the user's consent.</p>
+        <p>For purchases made through the Apple App Store, refund requests are handled exclusively by Apple through the App Store. For purchases made through Google Play, refund requests are handled by Google.</p>
+        <p>For US residents purchasing through the web (Stripe): if you are not satisfied within the first 7 days following your subscription, contact us at <a href="mailto:contact@thera-app.com">contact@thera-app.com</a> and we will review your refund request in good faith.</p>
+
+        <h2>5. Cancellation and Refunds</h2>
+        <p>You may cancel your subscription at any time from the "My Subscription" section of the application or via your Apple (App Store) or Google (Play Store) account depending on your purchase platform.</p>
+        <p>Upon cancellation, access to Premium features is maintained until the end of the current subscription period. No refund will be issued for the remaining period unless required by applicable law or if the request is made within 14 days following the first subscription (right of withdrawal — Art. L221-18 of the French Consumer Code, applicable only if the subscription has not yet been used).</p>
+        <p>LMT Labs (SASU) reserves the right to modify pricing with 30 days' notice by email.</p>
+
+        <h2>6. Promotional Codes</h2>
+        <p>Promotional codes provide temporary Premium access. They are personal, non-transferable, and non-cumulative. Only one code can be used per account. The duration of granted access is specified at activation.</p>
+
+        <h2>7. Liability</h2>
+        <p>Théra commits to ensuring service availability at 99% per month, excluding planned maintenance. In case of prolonged interruption, a credit may be granted upon request.</p>
+
+        <h2>8. Governing Law</h2>
+        <p>These Terms of Sale are governed by French law. Consumer protection laws of the user's country of residence remain applicable where mandatory. For California residents, additional rights under the CCPA apply (see <a href="/privacy.html">Privacy Policy</a>).</p>
+      </div>
+    </div>
 
     <div class="footer">
-      <p>© 2026 LMT Labs · Théra Daily</p>
-      <a href="/privacy.html">Confidentialité</a>
-      <a href="/">Accueil</a>
-      <a href="mailto:contact@thera-app.com">Contact</a>
+      <span>© 2026 LMT Labs · Théra Daily</span>
+      <a href="/privacy.html"><span data-lang="fr">Confidentialité</span><span data-lang="en">Privacy</span></a>
+      <a href="/"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
+      <a href="mailto:contact@thera-app.com">contact@thera-app.com</a>
     </div>
+
   </div>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('lang-en');
+      const isEn = document.body.classList.contains('lang-en');
+      document.documentElement.lang = isEn ? 'en' : 'fr';
+      localStorage.setItem('thera_lang', isEn ? 'en' : 'fr');
+    }
+    (function initLang() {
+      var saved = localStorage.getItem('thera_lang');
+      var browserLang = navigator.language || '';
+      var shouldBeFrench = saved === 'fr' || (!saved && browserLang.startsWith('fr'));
+      if (!shouldBeFrench) {
+        document.body.classList.add('lang-en');
+        document.documentElement.lang = 'en';
+      } else {
+        document.body.classList.remove('lang-en');
+        document.documentElement.lang = 'fr';
+      }
+      localStorage.setItem('thera_lang', shouldBeFrench ? 'fr' : 'en');
+    })();
+
+    // Tabs
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        const target = document.getElementById(tab.dataset.tab);
+        if (target) target.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
