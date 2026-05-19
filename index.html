@@ -644,7 +644,7 @@
       <div class="pricing-grid">
         <div class="pricing-card reveal reveal-delay-1">
           <div class="pricing-tier"><span data-lang="fr">Gratuit</span><span data-lang="en">Free</span></div>
-          <div class="pricing-price">0€</div>
+          <div class="pricing-price" id="free-price">0€</div>
           <div class="pricing-period"><span data-lang="fr">pour toujours</span><span data-lang="en">forever</span></div>
           <ul class="pricing-features">
             <li><span data-lang="fr">Chat Théra quotidien</span><span data-lang="en">Daily Théra chat</span></li>
@@ -740,6 +740,8 @@
     var priceEl = document.getElementById('premium-price');
     var periodEl = document.getElementById('premium-period');
     if (priceEl) priceEl.textContent = isEn ? '$9.99' : '9,99€';
+    const freeEl = document.getElementById('free-price');
+    if (freeEl) freeEl.textContent = isEn ? 'Free' : '0€';
     if (periodEl) periodEl.textContent = isEn ? 'per month' : 'par mois';
 
     function toggleBilling() {
